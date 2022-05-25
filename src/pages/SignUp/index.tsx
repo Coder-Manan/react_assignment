@@ -5,7 +5,7 @@ import React from "react";
 import Interest from "../../components/Interests";
 import allInterests from "../../constants/allTags";
 import changeInterests from "../../utils/interests";
-
+import Nav from "../../components/authnav/Nav";
 const SignUpPage: React.FC = () => {
   const allTags = allInterests.map((interest)=>{
     return(
@@ -14,6 +14,7 @@ const SignUpPage: React.FC = () => {
   })
     return (
       <div className="App">
+        <Nav />
         <h1>Signup page</h1>
         <InputField 
             id="signup-name"

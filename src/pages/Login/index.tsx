@@ -15,7 +15,6 @@ function TestFunction(){
 const LoginPage: React.FC = () => {
     return (
         // nav bar
-        
         <div className = "login-page">
             <Nav />
             <InputField 
