@@ -5,7 +5,7 @@ import {LoginPageState} from "../../types/loginStateType";
 import InputField from "../../components/InputField";
 import Button from "../../components/Button";
 import "../App.css";
-import Nav from "../../components/authnav/Nav";
+import Nav from "../../components/AuthNav";
 
 function TestFunction(){
     console.log((document.getElementById("login-email") as HTMLInputElement).value);

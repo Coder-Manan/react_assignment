@@ -1,15 +1,15 @@
 import React from "react";
-import MainNav from "../../components/mainnav/mainNav";
+import MainNav from "../../components/MainNav";
 import { useState } from "react";
 import LoginPage from "../Login";
 import useFetch from "../../hooks/AnimalFetch";
-import "../../components/modal/modal.css";
+import "../../components/Modal/modal.css";
 //import Modal from "../../components/modal";
 import Button from "../../components/Button";
 //import { showModal } from "../../components/modal/modal";
 //import "../../components/modal/modal.css";
-import { showModal, Modal } from "../../components/modal";
-import Post from "../../components/post";
+import { showModal, Modal } from "../../components/Modal";
+import Post from "../../components/Post";
 var setName;
 
 const MainPage:  React.FC =()=>{

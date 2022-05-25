@@ -1,4 +1,4 @@
-import { setImage } from ".";
+import { setImage } from "./index.tsx";
 var reader  = new FileReader();
 
 function confirm(){

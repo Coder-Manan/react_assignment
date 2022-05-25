@@ -83,3 +83,8 @@ h2{
 .selected{
   background-color: aqua;
 }
+
+button {
+  border-radius: 7px;
+  padding: 5px;
+}

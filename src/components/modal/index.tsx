@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useState } from "react";
-import confirm from "./logic";
+import confirm from "./logic.js";
 import Interest from "../Interests";
 import allInterests from "../../constants/allTags";
 import Button from "../Button";

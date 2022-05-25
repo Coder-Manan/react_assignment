@@ -1,6 +1,6 @@
 import React from "react";
 import useFetch from "../../hooks/AnimalFetch";
-import { setName } from "../../pages/main";
+import { setName } from "../../pages/Main";
 import MainNavProps from "../../types/mainNavPropType";
 
 const MainNav: React.FC<MainNavProps> = (props: MainNavProps) =>{

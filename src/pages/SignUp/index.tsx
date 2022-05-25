@@ -5,7 +5,7 @@ import React from "react";
 import Interest from "../../components/Interests";
 import allInterests from "../../constants/allTags";
 import changeInterests from "../../utils/interests";
-import Nav from "../../components/authnav/Nav";
+import Nav from "../../components/AuthNav";
 const SignUpPage: React.FC = () => {
   const allTags = allInterests.map((interest)=>{
     return(
