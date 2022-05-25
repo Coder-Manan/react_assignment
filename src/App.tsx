@@ -9,6 +9,7 @@ const App: React.FC = () => {
   return(
     
     <Router>
+      <Nav />
       <Routes>
         <Route path="/home" element={<MainPage />}/>
         <Route path = "*" element={<LoginPage/>}/>

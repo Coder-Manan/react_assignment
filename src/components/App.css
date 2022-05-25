@@ -42,13 +42,13 @@ h2{
   box-shadow: 1px 3px 12px black;
 }
 
-input{
+.input{
   padding: 8px;
   border: 2px solid rgb(13, 44, 86);
   border-radius: 9px;
 }
 
-input:hover{
+.input:hover{
   padding: 10px;
   border: 2px solid rgb(47, 87, 142);
   border-radius: 9px;
@@ -68,14 +68,18 @@ input:hover{
   margin-top: 41px;
 }
 
-button{
+.signup-btn{
   border-radius: 7px;
   padding: 5px;
-  /* margin-left: -853px;
-  margin-top: 96px; */
+  margin-left: -853px;
+  margin-top: 96px;
+  text-align: center;
 }
 
 .App h4{
   margin-top: 17px;
 }
 
+.selected{
+  background-color: aqua;
+}
