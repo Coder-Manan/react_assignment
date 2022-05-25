@@ -9,6 +9,7 @@ import Button from "../../components/Button";
 //import { showModal } from "../../components/modal/modal";
 //import "../../components/modal/modal.css";
 import { showModal, Modal } from "../../components/modal";
+import Post from "../../components/post";
 var setName;
 
 const MainPage:  React.FC =()=>{
@@ -25,6 +26,7 @@ const MainPage:  React.FC =()=>{
             <MainNav userName={userName} pictureURL={data!}/>
             <Button onClick={()=>{showModal()}} text="New Post"></Button>
             <Modal></Modal>
+            {/* TODO: fetch all posts and for each, make a Post component */}
         </div>
     ): 
     (<LoginPage />)
