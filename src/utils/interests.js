@@ -12,7 +12,7 @@ function changeInterests(interest){
     selected_interests.push(interest);
     console.log(selected_interests);
     document.getElementById(interest).className="selected";
-    
 }
 
 export default changeInterests;
+export {selected_interests};

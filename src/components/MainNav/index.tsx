@@ -5,10 +5,6 @@ import MainNavProps from "../../types/mainNavPropType";
 
 const MainNav: React.FC<MainNavProps> = (props: MainNavProps) =>{
     const {userName, pictureURL} = props;
-
-
-
-
     return(
         <div>
             <nav>

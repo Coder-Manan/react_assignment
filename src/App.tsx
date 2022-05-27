@@ -4,7 +4,7 @@ import SignUpPage from "./pages/SignUp";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Nav from "./components/AuthNav";
 import {MainPage} from "./pages/Main";
-
+import ProfilePage from "./pages/profile";
 const App: React.FC = () => {
   return(
     
@@ -15,6 +15,7 @@ const App: React.FC = () => {
         <Route path = "*" element={<LoginPage/>}/>
         <Route path = "/login" element={<LoginPage/>}/>
         <Route path = "/signup" element={<SignUpPage/>}/>
+        <Route path="/profile" element={<ProfilePage/>}></Route>
       </Routes>
     </Router>
   );
