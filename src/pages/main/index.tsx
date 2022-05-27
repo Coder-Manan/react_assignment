@@ -13,12 +13,15 @@ import Post from "../../components/Post";
 var setName;
 
 const MainPage:  React.FC =()=>{
-
-
     const {data, loading, error}  =useFetch("https://zoo-animal-api.herokuapp.com/animals/rand");
-
-
     const [userName, setuserName] = useState("username");
+    let posts = ["post-1-test"];
+    let postComponents = posts.map((post)=>{
+        return(
+            // TODO: get post id from post only
+            <Post id="test-1"></Post>
+        )
+    })
     setName = setuserName;
     //setuserName("test");
     return userName != "" ?(
@@ -27,6 +30,7 @@ const MainPage:  React.FC =()=>{
             <Button onClick={()=>{showModal()}} text="New Post"></Button>
             <Modal></Modal>
             {/* TODO: fetch all posts and for each, make a Post component */}
+            {postComponents}
         </div>
     ): 
     (<LoginPage />)
