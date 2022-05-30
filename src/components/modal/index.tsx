@@ -5,6 +5,8 @@ import { useState } from "react";
 import allInterests from "../../constants/AllTags";
 import { db, storage} from "../../services/firebase/firebase";
 import FirebaseServices from "../../services/firebase/firebaseClass";
+import { reset_interests, getInterests } from "../../utils/Interest";
+import { getUserInterests } from "../../services/firebase/firebase";
 import Button from "../Button";
 import Interest from "../interests";
 import confirm from "./logic";
@@ -54,9 +56,9 @@ const Modal: React.FC = () => {
             .then((url) => {
                 console.log(url);
                 setimageUrl(url);
-                
+                console.log(url);
                 //extracting the time of update of the post
-
+                setvisible("none");
                 getMetadata(ref(storage, folderName))
                 .then((metadata) => {
     
@@ -86,15 +88,23 @@ const Modal: React.FC = () => {
 
     setImage = setimage;
     setDisplay = setvisible;
-
-
+    reset_interests();
+    var reader = new FileReader();
     return(
         <div id="Modal" className="modal" style={{"display":visible, "zIndex": 100, "position": "absolute", "width": "100%", "height": "100%", "background": "rgba(0,0,0,0.4)","boxShadow":"0 0 60px 10px rgba(0, 0, 0, 20)"}}>
             <div className="modal-content" id="modal-content">
             <Button onClick={()=>{setvisible("none")}} text="Close"></Button>
                 <br />
                 <br />
-                <input type="file" accept=".jpg" id="image-input" onChange={()=>{confirm()}}/>
+                <input type="file" accept=".jpg" id="image-input" onChange={(event)=>{
+                    let file = event.target.files![0];
+                    let fileSize = file.size;
+                    reader.onload = function (e){
+                        setimage(file);
+                        setfolderName(fileSize+"");
+                    }
+                    reader.readAsDataURL(file);
+                    }}/>
                 <img src={image} alt="Your Image" id="post-image"/>
                 <div id="image"><input type="text" placeholder="Caption" /></div>
                 <div id="tags-1">
@@ -104,7 +114,23 @@ const Modal: React.FC = () => {
                     {allTags.slice(5,10)}
                 </div>
                 <br />
-                <Button onClick={()=>{Upload1()}} text="Publish Post"></Button>
+                <Button onClick={async ()=>{
+                    //first check if atleast one interest is common b/w user and post tags
+                    let userInterests = await getUserInterests();
+                    let postTags = getInterests();
+                    if (postTags.length == 0){
+                        alert("Please choose atleast one tag");
+                    }
+                    for (let i = 0; i < postTags.length; i++) {
+                        for (let j = 0; j < userInterests.length; j++) {
+                            if (postTags[i] == userInterests[j]){
+                                Upload1();
+                                return;
+                            }
+                        }
+                    }
+                    alert("Atleast one tag should match with your interests");
+                    }} text="Publish Post"></Button>
             </div>
         </div>
     );

@@ -7,23 +7,16 @@ import useFetch from "../../hooks/AnimalFetch";
 import { Modal, showModal } from "../../components/modal";
 import Button from "../../components/Button";
 import { reset_interests } from "../../utils/Interest";
+
 var setName;
 let setInterests;
 const MainPage:  React.FC =()=>{
-
-
     const {data, loading, error}  =useFetch("https://zoo-animal-api.herokuapp.com/animals/rand");
-
-
     const [userName, setuserName] = useState("username");
     const [image, setImage ] = useState(null)
     const [userInterests,setuserInterests] = useState([]);
     setInterests = setuserInterests;
     setName = setuserName;
-
-
-
-
 
     //setuserName("test");
     return (
