@@ -7,7 +7,7 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
     return (
         <div>
             <label>{label}</label>
-            <input type={type} id={id}></input>
+            <input type={type} id={id} onChange={()=>{}}></input>
         </div>
     );
 }

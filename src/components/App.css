@@ -8,7 +8,8 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 10vh;
+  /* min-height: 10vh;
+  max-height: 20vh; */
   background: rgb(13, 44, 86);
   color: white;
   list-style: none;
@@ -42,13 +43,13 @@ h2{
   box-shadow: 1px 3px 12px black;
 }
 
-.input{
+input{
   padding: 8px;
   border: 2px solid rgb(13, 44, 86);
   border-radius: 9px;
 }
 
-.input:hover{
+input:hover{
   padding: 10px;
   border: 2px solid rgb(47, 87, 142);
   border-radius: 9px;
@@ -68,18 +69,26 @@ h2{
   margin-top: 41px;
 }
 
-.signup-btn{
-  border-radius: 7px;
-  padding: 5px;
-  margin-left: -853px;
-  margin-top: 96px;
-  text-align: center;
+.button{
+  margin-right: 26px;
+  width: 77px;
+  padding: 9px;
+  border-radius: 19px;
+  font-weight: bold;
+  /* margin-left: -853px;
+  margin-top: 96px; */
 }
+
 
 .App h4{
   margin-top: 17px;
 }
 
-.selected{
-  background-color: aqua;
+#headerImage{
+  margin-left: -400px;
+  border-radius: 53px;
 }
+.userNameHead{
+  margin-left: -18px;
+}
+

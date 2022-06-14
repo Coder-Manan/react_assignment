@@ -1,7 +1,7 @@
 import React from "react";
-import InterestProps from "../../types/interestPropType";
-import changeInterests from "../../utils/interests";
-import "./interest.css"
+import InterestProps from "../../types/InterestPropType";
+import {changeInterests} from "../../utils/Interest";
+import "./interests.css"
 
 const Interest: React.FC<InterestProps> = (props: InterestProps) => {
     const {interest} = props;
